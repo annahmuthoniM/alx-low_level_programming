@@ -1,9 +1,11 @@
-#include<studio.h>
+#include <studio.h>
+
 /**
- * main.Entry point
- *
- * Return:Always 0 (Success)
+ * main - Prints the size of various types based on
+ * the computer it is compiled and run on..
+ * Return: Always 0.
  */
+
 int main(void)
 {
 	printf("Size of a char.%d bytes(s)\n",sizeof(char));
@@ -11,6 +13,6 @@ int main(void)
 	printf("size of long int:%d bytes(s)\n,sizeof(long int));
 	printf("size of long long int:%d bytes(s)\n,sizeof(long long int));
 	printf("size of float:%d bytes(s)\n,sizeof(float));
-	return(0);
+	return (0);
 }
 	
