@@ -3,19 +3,20 @@
 #include <stdio.h>
 
 /**
- * main - Determines if a number is postive, negative or zero.
- *
- * Return: Always 0 (Success)
+ * main - Entry point
+ * Description: 'Chech for positive or negative number'
+ * Return: always 0
  */
+
 int main(void)
 {
 	int n;
 
 	srand(time(0));
-	n = rand() - RAND_MAX/2;
-	if(n > 0)
+	n = rand() - RAND_MAX / 2;
+	if (n > 0)
 	{
-		prinff(%d is positive\n", n);
+		printf("%d is positive\n", n);
 	}
 	else if (n == 0)
 	{
@@ -23,6 +24,7 @@ int main(void)
 	}
 	else
 	{
-		prinf("%d is negative\n", n);
-	}return (0),
+		printf("%d is negative\n", n);
+	}
+	return (0);
 }
