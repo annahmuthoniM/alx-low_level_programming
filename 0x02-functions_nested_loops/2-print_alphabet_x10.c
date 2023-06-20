@@ -1,20 +1,17 @@
 #include "main.h"
 /**
- * print_alphabet_x10 - Make alphabet x10 times
- * Return: void
+ * _abs - Computes the absolute value of an integer.
+ * @c: The number to be computed.
+ * Return: Absolute value of number or zero
  */
-void print_alphabet_x10(void)
+int _abs(int c)
 {
-	char c;
-	int i = 0;
+	if (c < 0)
+	{
+	int abs_val;
 
-	while (i <= 9)
-	{
-	for (c = 'a'; c <= 'z'; c++)
-	{
-	_putchar(c);
+	abs_val = c * -1;
+	return (abs_val);
 	}
-	_putchar('\n');
-	i++;
-	}
+	return (c);
 }
