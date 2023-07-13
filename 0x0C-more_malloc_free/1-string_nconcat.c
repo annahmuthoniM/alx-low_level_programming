@@ -1,44 +1,41 @@
-#include "main.h"
 #include <stdlib.h>
+#include "main.h"
+
 /**
- * string_nconcat - ...
- * @s1: ...
- * @s2: ...
- * @n: ...
- * Return: ...
+ * *string_nconcat - concatenates two strings
+ * @s1: string to append to.
+ * @s2: string to concatenate from
+ * @n: number of bytes from s2 to concatenate to s1
+ *
+ * Return: pointer to the resulting string
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i = 0, l = 0, m = 0, o = 0;
-	char *str;
+	char *st;
+	unsigned int i = 0, j = 0, len1 = 0, len2 = 0;
 
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
-	while (s1[i])
-		i++;
-	while (s1[m])
-		m++;
-	if (n >= m)
-		o = i + m;
+	while (s1 && s1[len1])
+		len1++;
+	while (s2 && s2[len2])
+		len2++;
+
+	if (n < len2)
+		st = malloc(sizeof(char) * (len1 + n + 1));
 	else
-		m = i + n;
-	str = malloc(sizeof(char) * o + 1);
-	if (str == NULL)
+		st = malloc(sizeof(char) * (len1 + len2 + 1));
+
+	if (!st)
 		return (NULL);
-	m = 0;
-	while (l < o)
+	while (i < len1)
 	{
-		if (l <= i)
-			str[l] = s1[l];
-		if (l >= i)
-		{
-			str[l] = s2[m];
-			m++;
-		}
-		l++;
+		st[i] = s1[i];
+		i++;
 	}
-	str[l] = '\0';
-	return (str);
+	while (n < len2 && i < (len1 + n))
+		st[i++] = s2[j++];
+	while (n >= len2 && i < (len1 + len2))
+		st[i++] = s2[j++];
+
+	st[i] = '\0';
+	return (st);
 }
